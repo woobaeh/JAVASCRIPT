@@ -20,3 +20,6 @@ console.log(variable);
 
 console.log(typeof 123);
 console.log(typeof '123');
+
+// dynamic, weakly typed programming language
+
