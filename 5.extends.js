@@ -52,9 +52,15 @@ class Dog extends Animal {
   play() {
     console.log('놀자아');
   }
+  // overriding
+  eat() {
+    super.eat();
+    console.log('강아지가 먹는다!');
+  }
 }
 
 const dog = new Dog('빨강', '똘똘이');
 console.log(dog);
 dog.play();
 dog.sleep();
+dog.eat();
