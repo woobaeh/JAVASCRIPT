@@ -13,7 +13,8 @@ class Student {
   }
 }
 
-const student = new Student('현우', '배');
+const student = new Student('수지', '김');
+student.firstName = '안나';
 console.log(student.firstName);
 console.log(student.fullName);
 student.fullName = '김철수';
