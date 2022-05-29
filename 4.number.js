@@ -45,3 +45,5 @@ function isEqual(original, expected) {
 console.log(isEqual(1, 1));
 console.log(isEqual(0.1, 0.1));
 console.log(isEqual(num1, 0.1));
+
+// 결론, JS 에서 실수끼리 계산할 때 미묘한 차이가 발생할 수 있고 Number.EPSILON을 이용해서 감지할 수 있음
