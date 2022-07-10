@@ -45,5 +45,6 @@ const prop = {
 
 function changeColor({ styles: { color } }) {
   console.log(color);
+  console.log(styles);
 }
 changeColor(prop);
