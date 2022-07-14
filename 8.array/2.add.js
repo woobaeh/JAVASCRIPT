@@ -1,4 +1,4 @@
-const fruits = ["🍌", "🍎", "🍇", "🍑"];
+const fruits = ['🍌', '🍎', '🍇', '🍑'];
 
 // 배열 아이템을 참조하는 방법
 console.log(fruits[0]);
@@ -12,7 +12,7 @@ for (let i = 0; i < fruits.length; i++) {
 }
 // const fruits = ['🍌', '🍎', '🍇', '🍑'];
 // 추가, 삭제 - 좋지 않은 방식 💩
-fruits[6] = "🍓";
+fruits[6] = '🍓';
 console.log(fruits);
 
 delete fruits[1];
