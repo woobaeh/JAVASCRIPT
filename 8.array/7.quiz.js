@@ -3,6 +3,7 @@
 // input: ['🍌', '🍓', '🍇', '🍓']
 // output: [ '🍌', '🥝', '🍇', '🥝' ]
 function replace(array, from, to) {
+  return array.map((item) => (item === from ? to : item));
   const replaced = Array.from(array);
   for (let i = 0; i < replaced.length; i++) {
     if (replaced[i] === from) {
@@ -21,8 +22,19 @@ console.log(result);
 // 배열안에 그 요소가 몇개나 있는지 카운트 하는 함수 만들기
 // input: [ '🍌', '🥝', '🍇', '🥝' ], '🥝'
 // output: 2
+
 function count(array, item) {
-  let counter = 0;
+  return array.filter((value) => value === item).length;
+
+  // return array.reduce((count, value) => {
+  //   if (value === item) count++;
+  //   return count;
+  // }, 0);
+
+  // let counter = 0;
+  // array.forEach((value) => value === item && counter++);
+  // return counter;
+
   for (let i = 0; i < array.length; i++) {
     if (array[i] === item) {
       counter++;
@@ -39,7 +51,7 @@ console.log(count(['🍌', '🥝', '🍇', '🥝'], '🥝'));
 // output: [ '🍌', '🍇' ]
 
 function match(input, search) {
-  const result = [];
+  return input.filter((item) => search.includes(item));
   for (let i = 0; i < input.length; i++) {
     if (search.includes(input[i])) {
       result.push(input[i]);
@@ -49,35 +61,13 @@ function match(input, search) {
 }
 console.log(match(['🍌', '🥝', '🍇'], ['🍌', '🍓', '🍇', '🍓']));
 
+// 퀴즈 4
+// 5보다 큰 숫자들의 평균
+const nums = [3, 16, 5, 25, 4, 34, 21];
 
-// 고차 함수 사용
-
-// 퀴즈1
-
-function quiz1(arr, from, to) {
-  return arr.map((fruit) => (fruit === from ? to : fruit));
-}
-
-const fruits1 = ['🍌', '🍓', '🍇', '🍓'];
-
-console.log(quiz1(fruits1, '🍓', '🥝'))
-
-// 퀴즈2
-
-function quiz2(arr, emoji) {
-  let value = 0;
-
-  arr.forEach((element) => element === emoji && value++);
-
-  return value;
-}
-
-const fruits2 = ['🍌', '🥝', '🍇', '🥝'];
-
-console.log(quiz2(fruits2, '🥝'));
-
-// 퀴즈3
-
-function quiz3(arr1, arr2) {
-  return arr1.filter((element) => arr2.includes(element));
-}
+const average = nums
+  .filter((num) => num > 5)
+  .reduce((avg, num, _, array) => (avg += num / array.length), 0);
+console.log(average);
+// const sum = numbers.reduce((sum, num) => (sum += num), 0) / 5;
+// console.log(sum);
