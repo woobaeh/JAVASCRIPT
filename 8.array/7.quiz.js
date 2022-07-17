@@ -31,6 +31,7 @@ function count(array, item) {
   //   return count;
   // }, 0);
 
+  // 나의 풀이
   // let counter = 0;
   // array.forEach((value) => value === item && counter++);
   // return counter;
@@ -69,5 +70,6 @@ const average = nums
   .filter((num) => num > 5)
   .reduce((avg, num, _, array) => (avg += num / array.length), 0);
 console.log(average);
+// 나의 풀이
 // const sum = numbers.reduce((sum, num) => (sum += num), 0) / 5;
 // console.log(sum);
