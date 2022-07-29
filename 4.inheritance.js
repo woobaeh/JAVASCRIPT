@@ -34,6 +34,7 @@ dog1.printName();
 const tiger1 = new Tiger('어흥', '🐯');
 tiger1.hunt();
 
+// 상속도 확인 하는 법
 console.log(dog1 instanceof Dog); // true
 console.log(dog1 instanceof Animal); // true
 console.log(dog1 instanceof Tiger); // false
