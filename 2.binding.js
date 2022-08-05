@@ -4,6 +4,7 @@
 // 정적으로 인스턴스가 만들어지는 시점에 this가 결정됨!
 // 하지만, 자바스크립트에서는 누가 호출하냐에 따라서 this가 달라짐!
 // 즉, this는 호출하는 사람(caller)에 의해 동적으로 결정됨!
+
 function Cat(name) {
   this.name = name;
   this.printName = function () {
@@ -23,13 +24,17 @@ const dog = new Dog('멍멍');
 cat.printName();
 dog.printName();
 
+// 자바스크립트의 this 동적으로 바인딩 됨을 보여주는 예시 1.
+
 dog.printName = cat.printName;
-dog.printName();
-cat.printName();
+dog.printName(); // 고양이의 이름을 출력한다옹: 멍멍
+cat.printName(); // 고양이의 이름을 출력한다옹: 냐옹
+
+// 자바스크립트의 this 동적으로 바인딩 됨을 보여주는 예시 2.
 
 function printOnMonitor(printName) {
   console.log('모니터를 준비하고!, 전달된 콜백을 실행!');
-  printName();
+  printName(); // object.printName()이 아니므로 this.name이 undefined
 }
 
-printOnMonitor(cat.printName);
+printOnMonitor(cat.printName); // 고양이의 이름을 출력한다옹: undefined
